@@ -1,0 +1,47 @@
+@startuml
+/' skinparam classAttributeIconSize 0 '/
+/' skinparam genericDisplay old '/
+/' skinparam defaultFontName Arial '/
+/' skinparam handwritten true '/
+User o-- Account
+Account --  Violations
+Account o--  Transaction
+
+class User {
+    -name: String
+    -id: int
+    -account: Account
+    +getName():String
+    +setName(String):void
+    +getId():String
+    +setId(String):void
+    +addAccount(Account):void
+    +deleteAccount(Account):void
+}
+
+class Account {
+    -user: User
+    -transactions: Transaction
+    -credit: int
+    +getCredit(): int
+    +setCredit(int): void
+    +validateTransaction(Transaction): boolean
+    +addTransaction(Transaction): void
+}
+
+class Transaction {
+    -amount: int
+    -time: Date
+    -merchant: String
+}
+
+class Violations{
+    +insufficientLimit(Account):boolean
+    +cardNotActive(Account):boolean
+    +highFrequencySmallInterval(Account):boolean
+    +doubledTransacction(Account):boolean
+}
+
+
+
+@enduml
