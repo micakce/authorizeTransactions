@@ -3,7 +3,9 @@
 /' skinparam genericDisplay old '/
 /' skinparam defaultFontName Arial '/
 /' skinparam handwritten true '/
+
 User o-- Account
+User -- Input
 Account --  Violations
 Account o--  Transaction
 
@@ -40,6 +42,10 @@ class Violations{
     +cardNotActive(Account):boolean
     +highFrequencySmallInterval(Account):boolean
     +doubledTransacction(Account):boolean
+}
+
+class Input {
+    -input:Sring
 }
 
 

@@ -34,5 +34,4 @@ public class User {
     public void deleteAccount(Account account){
         return;
     }
-
 }
